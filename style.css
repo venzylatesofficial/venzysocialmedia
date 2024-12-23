@@ -13,10 +13,10 @@ body {
     justify-content: center;
     align-items: center;
     /* background-color:#110f0f;
-    background: rgb(167,39,39); */
+    background: rgb(167,39,39);... */
     background-color: #000000;
     opacity: 1;
-    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #000000 40px ), repeating-linear-gradient( #db0e0e55, #db0e0e );
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #000000 40px), repeating-linear-gradient(#db0e0e55, #db0e0e);
 }
 
 
@@ -26,7 +26,7 @@ body {
     align-items: center;
     padding-top: 17px;
     padding-bottom: 20px;
-    background-color: #a81b1b93 ;
+    background-color: #a81b1b93;
     height: 505px;
     width: 355px;
     box-shadow: 0 9px 26px 0 #a81b1b;
