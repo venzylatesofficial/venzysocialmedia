@@ -94,3 +94,51 @@ img {
     color: rgb(225, 225, 225);
     margin-bottom: 0px;
 }
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar {
+        width: 40%;
+        height: auto;
+        padding: 10px;
+    }
+
+    img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .link {
+        width: 100%;
+    }
+
+    .link>a {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        width: 70%;
+        padding: 5px;
+    }
+
+    img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .link>a {
+        font-size: 10px;
+        padding: 6px;
+    }
+    .pmz {
+        font-size: 11px;
+        padding-bottom: 20px;
+    }
+}
