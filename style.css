@@ -4,6 +4,8 @@ body {
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    /* overflow: hidden; */
 }
 
 .container {
@@ -24,11 +26,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 17px;
+    padding-top: 30px;
     padding-bottom: 20px;
     background-color: #a81b1b93;
-    height: 620px;
-    width: 355px;
+    height: 699px;
+    width: 444px;
     box-shadow: 0 9px 26px 0 #a81b1b;
     border: 3px solid #000000;
     border-radius: 20px;
@@ -39,16 +41,15 @@ img {
     justify-content: center;
     align-items: center;
     justify-content: center;
-    height: 120px;
-    width: 120px;
+    height: 450px;
+    width: 150px;
     border-radius: 100px;
     border: 6px solid #000000;
     margin: 5px;
-
 }
 
 .navbar>p {
-    padding-top: 5px;
+   padding: 10px;
     font-size: 24px;
     font-weight: bold;
     color: rgb(219, 225, 231);
@@ -58,22 +59,22 @@ img {
 .link {
     display: flex;
     flex-direction: column;
-    padding: 15px;
-    height: 200%;
-    width: 299px;
+    padding: 14px;
+    height: 230%;
+    width: 399px;
 }
 
 .link>a {
     text-decoration: none;
     text-align: center;
     color: #ffffff;
-    font-weight: 900%;
+    /* font-weight: 900%; */
     font-size: 13px;
     text-transform: uppercase;
     border: 2px solid rgb(198, 198, 198);
     border-radius: 9px;
     background-color: #0000004d;
-    margin: 10px 10px;
+    margin: 9px;
     padding: 11px;
 
 }
@@ -86,59 +87,56 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0px;
-}
-
-.pmz {
+    margin: 19px;
     font-size: 13px;
     color: rgb(225, 225, 225);
-    margin-bottom: 0px;
 }
 
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        padding: 10px;
-    }
 
     .navbar {
-        width: 40%;
+        width: 50%;
         height: auto;
-        padding: 10px;
+        padding: 20px;
     }
 
     img {
-        height: 100px;
-        width: 100px;
+        height: 150px;
+        width: 150px;
     }
 
     .link {
         width: 100%;
+        padding-top: 0%;
     }
 
     .link>a {
         font-size: 12px;
-        padding: 8px;
+        padding: 12px;
+    }
+    .pmz {
+        font-size: 12px;
+        padding: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .navbar {
-        width: 70%;
+        width: 75%;
         padding: 5px;
     }
 
     img {
-        height: 80px;
-        width: 80px;
+        height: 120px;
+        width: 120px;
     }
 
     .link>a {
         font-size: 10px;
-        padding: 6px;
+        padding: 8px;
     }
     .pmz {
-        font-size: 11px;
-        padding-bottom: 20px;
+        font-size: 12px;
+        padding: 20px;
     }
 }
