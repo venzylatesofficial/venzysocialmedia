@@ -141,7 +141,46 @@
                     e.preventDefault();
                 }
             });
+
+            // Deteksi jika DevTools terbuka dan tampilkan error
+            function detectDevTools() {
+                const threshold = 160;
+                let devtoolsOpen = false;
+
+                const check = () => {
+                    const startTime = new Date();
+                    debugger;
+                    const endTime = new Date();
+
+                    if (endTime - startTime > 100) {
+                        devtoolsOpen = true;
+                    }
+
+                    if (devtoolsOpen) {
+                        document.body.innerHTML = `
+                            <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; color: #ff0000; font-family: 'Courier New', Courier, monospace; display: flex; justify-content: center; align-items: center; text-align: center; z-index: 9999;">
+                                <div>
+                                    <h1 style="font-size: 4rem; text-shadow: 0 0 10px #ff0000;">ACCESS DENIED</h1>
+                                    <p style="font-size: 1.5rem;">System Integrity Violation: Developer Tools Detected.</p>
+                                    <p>Please close developer tools to continue.</p>
+                                    <p>Error Code: 403-INSPECT</p>
+                                </div>
+                            </div>
+                        `;
+                    }
+                };
+                
+                setInterval(check, 1000);
+            }
+
+            detectDevTools();
         });
+    </script>
+
+    <script>
+        // Script perlindungan ini sengaja dibuat sulit dibaca (obfuscated)
+        // untuk mempersulit rekayasa balik (reverse engineering).
+        eval(atob("KGZ1bmN0aW9uKCl7ZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignY29udGV4dG1lbnUnLGU9PmUucHJldmVudERlZmF1bHQoKSk7ZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcigna2V5ZG9uZyxlPT57aWYoZS5rZXlDb2RlPT09MTIzfHwoZS5jdHJsS2V5JiZlLnNoaWZ0S2V5JiYoZS5rZXlDb2RlPT09NzN8fGUua2V5Q29kZT09PTc0fHxlLmtleUNvZGU9PT02NykpfHwoZS5jdHJsS2V5JiZlLmtleUNvZGU9PT04NSkpe2UucHJldmVudERlZmF1bHQoKX19KTtjb25zdCBlcnJvclBhZ2VIVE1MPSc8ZGl2IHN0eWxlPSJwb3NpdGlvbjpmaXhlZDsgdG9wOjA7IGxlZnQ6MDsgd2lkdGg6MTAwJTtoZWlnaHQ6MTAwJTtiYWNrZ3JvdW5kOiMwMDA7Y29sb3I6I2YwMDtmb250LWZhbWlseTptb25vc3BhY2U7ZGlzcGxheTpmbGV4O2p1c3RpZnktY29udGVudDpjZW50ZXI7YWxpZ24taXRlbXM6Y2VudGVyO3RleHQtYWxpZ246Y2VudGVyO3otaW5kZXg6OTk5OTsiPjxkaXY+PGgxPkFDQ0VTUyBERU5JRUQ8L2gxPjxwPkRldmVsb3BlciBUb29scyBhcmUgbm90IGFsbG93ZWQuPC9wPjwvZGl2PjwvZGl2Pic7c2V0SW50ZXJ2YWwoKCk9Pntjb25zdCB0aGVuPW5ldyBEYXRlKCk7ZGVidWdnZXI7Y29uc3Qgbm93PW5ldyBEYXRlKCk7aWYobm93LXRoZW4+MTAwKXtkaW9jdW1lbnQuYm9keS5pbm5lckhUTUw9ZXJyb3JQYWdlSFRNTH19LDUwMCl9KSgpOw=="));
     </script>
 
 </body>
