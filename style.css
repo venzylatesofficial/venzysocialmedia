@@ -16,7 +16,7 @@ body {
     align-items: center;
     background-color: #000000;
     opacity: 1;
-    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #000000 40px), repeating-linear-gradient(#2c08ab55, #7f0edb);
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #000000 40px), repeating-linear-gradient(#0805a555, #2417b0a1);
     padding: 20px;
 }
 
@@ -25,11 +25,11 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 30px 20px 20px;
-    background-color: #7608bf62;
+    background-color: #060d6d62;
     min-height: 800px;
     width: 100%;
     max-width: 444px;
-    box-shadow: 0 9px 26px 0 #5f00cc;
+    box-shadow: 0 9px 26px 0 #1a2fb6af;
     border: 3px solid #000000;
     border-radius: 20px;
     box-sizing: border-box;
@@ -41,7 +41,7 @@ img {
     max-height: 450px;
     width: 150px;
     border-radius: 100px;
-    border: 6px solid #000000;
+    border: 6px solid #dfdfdf;
     margin: 5px;
     object-fit: cover;
 }
@@ -68,6 +68,7 @@ img {
 .link>a {
     text-decoration: none;
     text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     color: #ffffff;
     font-size: clamp(11px, 2.5vw, 13px);
     text-transform: uppercase;
@@ -85,9 +86,11 @@ img {
 }
 
 .link>a:hover {
-    background-color: #100e0ebe;
+    background-color: #ffffffe2;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    color: #000000;
+    font-weight: bold;
 }
 
 .pmz {
@@ -129,6 +132,13 @@ img {
     
     .pmz {
         margin: 15px 0;
+    }
+
+    .popup-content {
+        padding: 25px;
+    }
+    .popup-content h2 {
+        font-size: 22px;
     }
 }
 
@@ -172,6 +182,21 @@ img {
         margin: 12px 0;
         font-size: 11px;
     }
+
+    .popup-content {
+        width: 90%;
+        padding: 20px;
+    }
+    .popup-content h2 {
+        font-size: 20px;
+    }
+    .popup-content p {
+        font-size: 14px;
+    }
+    /* Mengubah ukuran font countdown untuk layar kecil */
+    .popup-content p[style] {
+        font-size: 12px !important;
+    }
 }
 
 /* Small Mobile Responsive */
@@ -208,6 +233,17 @@ img {
         margin: 10px 0;
         font-size: 10px;
     }
+
+    .popup-content h2 {
+        font-size: 18px;
+    }
+    .popup-content p {
+        font-size: 12px;
+    }
+    /* Mengubah ukuran font countdown untuk layar sangat kecil */
+    .popup-content p[style] {
+        font-size: 11px !important;
+    }
 }
 
 /* Landscape Orientation */
@@ -236,4 +272,61 @@ img {
         margin: 5px 0;
         min-height: 30px;
     }
+}
+
+.popup-container {
+    display: none; /* Awalnya disembunyikan, JS akan menampilkannya */
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #000000df;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #060651a2; /* Warna ungu */
+    color: white;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 85%;
+    max-width: 450px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close-btn {
+    color: #ccc;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
 }

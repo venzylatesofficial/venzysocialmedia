@@ -22,7 +22,6 @@
 
         <nav class="navbar">
 
-
             <img src="profil.jpg" alt="">
 
             <p>VENZY LATES</p>
@@ -44,7 +43,7 @@
                 <a href="https://www.tiktok.com/@venzylates?is_from_webapp=1&sender_device=pc"
                     class="animate__animated animate__animated animate__fadeIn animate__delay-5s">tiktok venzy</a>
                     
-                <a href="venz.html"
+                <a href="https://venzla.ct.ws"
                     class="animate__animated animate__animated animate__fadeIn animate__delay-3s">website venzla</a>
 
                 <a href="https://discord.gg/WESdEWPftG"
@@ -66,6 +65,84 @@
 
 
     </div>
+
+    <div id="popup-overlay" class="popup-container">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>WELCOME!</h2>
+            <br>
+            <p>MAKASIH UDAH MAMPIR<br>JANGAN LUPA FOLLOW YAA...</p>
+            <br>
+            <p style="font-size: 14px; margin-top: 15px;">PopUp ini akan tertutup dalam <span id="countdown">10</span> detik...</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const popupOverlay = document.getElementById('popup-overlay');
+            const closeBtn = document.querySelector('.close-btn');
+            const countdownElement = document.getElementById('countdown');
+
+            // Tampilkan popup saat halaman dimuat
+            popupOverlay.style.display = 'flex';
+
+            let timeLeft = 10// Waktu hitung mundur
+
+            const countdownInterval = setInterval(() => {
+                timeLeft--;
+                countdownElement.textContent = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(countdownInterval);
+                    closePopup();
+                }
+            }, 1000);
+
+            function closePopup() {
+                if (popupOverlay.style.display !== 'none') {
+                    clearInterval(countdownInterval); // Hentikan interval jika ditutup manual
+                    popupOverlay.style.display = 'none';
+                }
+            }
+
+            closeBtn.addEventListener('click', closePopup);
+
+            // Tutup popup jika user mengklik di luar area popup
+            window.addEventListener('click', function (event) {
+                if (event.target == popupOverlay) {
+                    closePopup();
+                }
+            });
+
+            // Mencegah klik kanan
+            document.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+            });
+
+            // Mencegah tombol keyboard untuk inspect element
+            document.addEventListener('keydown', function (e) {
+                // F12
+                if (e.keyCode == 123) {
+                    e.preventDefault();
+                }
+                // Ctrl+Shift+I
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    e.preventDefault();
+                }
+                // Ctrl+Shift+C
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                    e.preventDefault();
+                }
+                // Ctrl+Shift+J
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    e.preventDefault();
+                }
+                // Ctrl+U
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
 
 </body>
 
